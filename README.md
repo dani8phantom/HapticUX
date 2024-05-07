@@ -35,7 +35,6 @@ npm install socket.io
 npm install serialport
 
 ```
-![Install Dependancies](02%20InstallDependancies.png)
 <img src="02%20InstallDependancies.png" alt="Arduino IDE" width="800">
 ## Preparing the Arduino for Communicating with the Host Computer
 1. Open the arduino IDE with the sketch `ArduinoHaptic.ino` which can be found in the folder **Arduino Code**
@@ -49,22 +48,24 @@ For example, the serial port I am using is
 If you are using windows or another operating system besides MacOS, then your port name will differ. Save the name of this port for later. 
 
 3. Plug the DC motor terminals into Arduino UNO's PWM pin 3 and and GND. 
-![asset 04](04ArduinoSetup.png)
-4. Upload the sketch and **close** the Arduino IDE.
+
+<img src="04ArduinoSetup.png" alt="Arduino IDE" width="800">
+5. Upload the sketch and **close** the Arduino IDE.
 
 
 ## Edit the `HapticUX.js` Script 
 1. Use any text editor (or your prefered one, IMO Visual Studio Code) to open and edit `HapticUX.js`
 ![asset 05](05%20EditJS.png)
-2. On line 11, change '/dev/cu.usbserial-14140' to the port name you identified ealier using the arduino IDE.
-3. Save the `HapticUX.js` 
+
+3. On line 11, change '/dev/cu.usbserial-14140' to the port name you identified ealier using the arduino IDE.
+4. Save the `HapticUX.js` 
 
 ## Running the Server
 Start the Node.js server by opening a terminal in the **Server side** folder and running:
 ```bash
 node HapticUX.js
 ```
-![asset06](06RunHapticUXjs.png)
+<img src="06RunHapticUXjs.png" alt="Arduino IDE" width="800">
 
 ## Open a Web browser at local host 8999
 1. type localhost:8999 in the URL bar of your web browser
