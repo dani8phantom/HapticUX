@@ -40,6 +40,7 @@ npm install serialport
 1. Open the arduino IDE with the sketch `ArduinoHaptic.ino` which can be found in the folder **Arduino Code**
 2. Set up the Arduino UNO board & identify the serial port you are using 
 ![ardunioIDE](03ArdunioIDE.png)
+<img src="03ArdunioIDE.png" alt="Arduino IDE" width="400" height="300">
 For example, the serial port I am using is 
 ```bash
 /dev/cu.usbserial-14140
