@@ -35,7 +35,7 @@ npm install socket.io
 npm install serialport
 
 ```
-![Install Dependancies](assets/02%20InstallDependancies.png)
+![Install Dependancies](02%20InstallDependancies.png)
 ## Preparing the Arduino for Communicating with the Host Computer
 1. Open the arduino IDE with the sketch `ArduinoHaptic.ino` which can be found in the folder **Arduino Code**
 2. Set up the Arduino UNO board & identify the serial port you are using 
