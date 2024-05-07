@@ -25,7 +25,7 @@ The client side folder contains `index.html` and `style.css` and is referenced b
 2. If you do not already have the Arduino IDE installed on your computer, download it from this [link](https://www.arduino.cc/en/software)
 3. Install Dependencies: Install the required packages in the **Server Side** folder by opening a terminal in the Server side folder and running these commands:
 
-![OpenTerminalatfolder](assets/01%20OpenTerminalAtSSFolder.png)
+![OpenTerminalatfolder](01%20OpenTerminalAtSSFolder.png)
 
 
 ```bash
@@ -39,7 +39,7 @@ npm install serialport
 ## Preparing the Arduino for Communicating with the Host Computer
 1. Open the arduino IDE with the sketch `ArduinoHaptic.ino` which can be found in the folder **Arduino Code**
 2. Set up the Arduino UNO board & identify the serial port you are using 
-![ardunioIDE](assets/03ArdunioIDE.png)
+![ardunioIDE](03ArdunioIDE.png)
 For example, the serial port I am using is 
 ```bash
 /dev/cu.usbserial-14140
@@ -47,13 +47,13 @@ For example, the serial port I am using is
 If you are using windows or another operating system besides MacOS, then your port name will differ. Save the name of this port for later. 
 
 3. Plug the DC motor terminals into Arduino UNO's PWM pin 3 and and GND. 
-![asset 04](assets/04ArduinoSetup.png)
+![asset 04](04ArduinoSetup.png)
 4. Upload the sketch and **close** the Arduino IDE.
 
 
 ## Edit the `HapticUX.js` Script 
 1. Use any text editor (or your prefered one, IMO Visual Studio Code) to open and edit `HapticUX.js`
-![asset 05](assets/05%20EditJS.png)
+![asset 05](05%20EditJS.png)
 2. On line 11, change '/dev/cu.usbserial-14140' to the port name you identified ealier using the arduino IDE.
 3. Save the `HapticUX.js` 
 
@@ -62,7 +62,7 @@ Start the Node.js server by opening a terminal in the **Server side** folder and
 ```bash
 node HapticUX.js
 ```
-![asset06](assets/06RunHapticUXjs.png)
+![asset06](06RunHapticUXjs.png)
 
 ## Open a Web browser at local host 8999
 1. type localhost:8999 in the URL bar of your web browser
@@ -70,8 +70,8 @@ node HapticUX.js
 localhost:8999
 ```
 2. Move the slider and watch the square change size and color as the haptics intensify
-![asset07](assets/07Hapticweb.png)
-![asset08](assets/08Hapticweb.png)
+![asset07](07Hapticweb.png)
+![asset08](08Hapticweb.png)
 
 ## How It Works
 
