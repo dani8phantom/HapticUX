@@ -25,7 +25,7 @@ The client side folder contains `index.html` and `style.css` and is referenced b
 2. If you do not already have the Arduino IDE installed on your computer, download it from this [link](https://www.arduino.cc/en/software)
 3. Install Dependencies: Install the required packages in the **Server Side** folder by opening a terminal in the Server side folder and running these commands:
 
-![OpenTerminalatfolder](assets/01%20OpenTerminalAtSSFolder.png)
+![OpenTerminalatfolder](01%20OpenTerminalAtSSFolder.png)
 
 
 ```bash
