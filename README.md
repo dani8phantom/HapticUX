@@ -23,10 +23,12 @@ The client side folder contains `index.html` and `style.css` and is referenced b
 ## Setup
 1. Ensure you have Node.js installed on your computer. You can download Node.js for Microsoft Windows and macOS from this [link](https://nodejs.org/en/download/). 
 2. If you do not already have the Arduino IDE installed on your computer, download it from this [link](https://www.arduino.cc/en/software)
+
 3. Install Dependencies: Install the required packages in the **Server Side** folder by opening a terminal in the Server side folder and running these commands:
 
-![OpenTerminalatfolder](01%20OpenTerminalAtSSFolder.png)
+<img src="01%20OpenTerminalAtSSFolder.png" alt="Arduino IDE" width="800">
 
+***Open Terminal at Server Side Folder***
 
 ```bash
 npm install johnny five
@@ -36,15 +38,20 @@ npm install serialport
 
 ```
 <img src="02%20InstallDependancies.png" alt="Arduino IDE" width="800">
+
+***Install Dependancies*** 
+
 ## Preparing the Arduino for Communicating with the Host Computer
 1. Open the arduino IDE with the sketch `ArduinoHaptic.ino` which can be found in the folder **Arduino Code**
 2. Set up the Arduino UNO board & identify the serial port you are using 
 ![ardunioIDE](03ArdunioIDE.png)
+***Identifying port with Arduino IDE, setting up UNO board***
 
 For example, the serial port I am using is 
 ```bash
 /dev/cu.usbserial-14140
 ```
+
 If you are using windows or another operating system besides MacOS, then your port name will differ. Save the name of this port for later. 
 
 3. Plug the DC motor terminals into Arduino UNO's PWM pin 3 and and GND. 
@@ -56,6 +63,7 @@ If you are using windows or another operating system besides MacOS, then your po
 ## Edit the `HapticUX.js` Script 
 1. Use any text editor (or your prefered one, IMO Visual Studio Code) to open and edit `HapticUX.js`
 ![asset 05](05%20EditJS.png)
+***Editing Java Script File for local port*** 
 
 3. On line 11, change '/dev/cu.usbserial-14140' to the port name you identified ealier using the arduino IDE.
 4. Save the `HapticUX.js` 
@@ -66,6 +74,8 @@ Start the Node.js server by opening a terminal in the **Server side** folder and
 node HapticUX.js
 ```
 <img src="06RunHapticUXjs.png" alt="Arduino IDE" width="800">
+
+***Running the server on terminal*** 
 
 ## Open a Web browser at local host 8999
 1. type localhost:8999 in the URL bar of your web browser
