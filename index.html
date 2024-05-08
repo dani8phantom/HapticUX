@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Node.Js Haptic Control</title>
+    <meta name="viewport" content="width=400px" />
+    <script src="socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #square {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <p>Move Slider to Increase Intensity of Haptics</p> 
+    <input type="range" id="inputSlider" min="0" max="255" value="50" step="1" oninput="showValue(this.value)" />
+    <br><br>
+    <span id="outputText">50</span>
+    
+
+    <div id="square"></div>
+    
+    <script type="text/javascript">
+        var socket = io.connect();
+
+        socket.on('led', function (data) {
+            document.getElementById("inputSlider").value = data.value;
+            document.getElementById("outputText").innerHTML = data.value;
+            updateSquareSize(data.value);
+        });
+
+        function showValue(newValue) {
+            document.getElementById("outputText").innerHTML = newValue;
+            socket.emit('led', { value: newValue });
+            updateSquareSize(newValue);
+        }
+
+        var hapticButton = document.getElementById('hapticButton');
+        hapticButton.addEventListener('mouseover', function () {
+            console.log('Mouse over button');
+            socket.emit('haptic', { type: 'hover' });
+        });
+
+        hapticButton.addEventListener('mousedown', function () {
+            console.log('Mouse pressed');
+            socket.emit('haptic', { type: 'click' });
+        });
+
+        function updateSquareSize(value) {
+            const square = document.getElementById("square");
+            const size = value * 2;
+            square.style.width = size + "px";
+            square.style.height = size + "px";
+            square.innerText = value;
+
+            // Calculate color based on intensity value
+            const red = Math.floor((255 * value) / 255);
+            const green = Math.floor((255 * (255 - value)) / 255);
+            square.style.backgroundColor = `rgb(${red}, ${green}, 0)`;
+        }
+    </script>
+</body>
+</html>
